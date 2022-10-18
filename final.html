@@ -1,0 +1,3562 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/comon0.css">
+    <meta charset="UTF-8">
+    <title>基于Python的英雄联盟数据分析</title>
+            <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+        <script type="text/javascript" src="https://assets.pyecharts.org/assets/jquery.min.js"></script>
+        <script type="text/javascript" src="https://assets.pyecharts.org/assets/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="https://assets.pyecharts.org/assets/ResizeSensor.js"></script>
+
+            <link rel="stylesheet"  href="https://assets.pyecharts.org/assets/jquery-ui.css">
+<!--    <style>-->
+<!--        .t_title{-->
+<!--            width: 100%;-->
+<!--            height: 100%;-->
+<!--            text-align: center;-->
+<!--            font-size: 2.5em;-->
+<!--            line-height: 80px;-->
+<!--            color: #fff;-->
+<!--        }-->
+<!--        #chart_map{-->
+<!--            cursor: pointer;-->
+<!--        }-->
+<!--        .t_show{-->
+<!--            position: absolute;-->
+<!--            top: 0;-->
+<!--            right: 0;-->
+<!--            border-radius: 2px;-->
+<!--            background: #2C58A6;-->
+<!--            padding: 2px 5px;-->
+<!--            color: #fff;-->
+<!--            cursor: pointer;-->
+<!--        }-->
+<!--    </style>-->
+</head>
+<body>
+<!--    <div class="header">-->
+<!--    <div class="bg_header">-->
+<!--        <div class="header_nav fl t_title">-->
+<!--            LOL比赛数据可视化-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    </div>-->
+    <div class="head">
+    <h1><a href="https://gitee.com/iGaoWei/big-data-view">LOL比赛数据可视化</a></h1>
+    <style>.box {  }; </style>
+        
+    <div class="box">
+                <div id="bar_cmt2" class="chart-container" style="position: absolute; width: 446px; height: 214px; top: 57.66666793823242px; left: 1170px;"></div>
+    <script>
+        var chart_bar_cmt2 = echarts.init(
+            document.getElementById('bar_cmt2'), 'white', {renderer: 'canvas'});
+        var option_bar_cmt2 = {
+    "backgroundColor": "rgba(6,48,109,.2)",
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "bar",
+            "name": "\u83b7\u80dc\u6b21\u6570",
+            "legendHoverLink": true,
+            "data": [
+                26077,
+                25413
+            ],
+            "showBackground": false,
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            },
+            "markPoint": {
+                "symbolSize": 35,
+                "label": {
+                    "show": true,
+                    "position": "inside",
+                    "color": "#fff",
+                    "margin": 8
+                },
+                "data": [
+                    {
+                        "name": "\u6700\u5927\u503c",
+                        "type": "max"
+                    }
+                ]
+            },
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u83b7\u80dc\u6b21\u6570"
+            ],
+            "selected": {
+                "\u83b7\u80dc\u6b21\u6570": true
+            },
+            "show": true,
+            "left": "right",
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "xAxis": [
+        {
+            "name": "\u961f\u4f0d",
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "axisLabel": {
+                "show": true,
+                "position": "top",
+                "color": "white",
+                "margin": 8,
+                "fontSize": 16
+            },
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "Blue",
+                "Red"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "name": "\u83b7\u80dc\u6b21\u6570",
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "axisLabel": {
+                "show": true,
+                "position": "top",
+                "color": "white",
+                "margin": 8,
+                "fontSize": 8
+            },
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }
+    ],
+    "title": [
+        {
+            "text": "\u84dd\u7ea2\u961f\u4f0d\u83b7\u80dc\u6570",
+            "left": "left",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ],
+    "toolbox": {
+        "show": false,
+        "orient": "horizontal",
+        "itemSize": 15,
+        "itemGap": 10,
+        "left": "80%",
+        "feature": {
+            "saveAsImage": {
+                "type": "png",
+                "backgroundColor": "auto",
+                "connectedBackgroundColor": "#fff",
+                "show": true,
+                "title": "\u4fdd\u5b58\u4e3a\u56fe\u7247",
+                "pixelRatio": 1
+            },
+            "restore": {
+                "show": true,
+                "title": "\u8fd8\u539f"
+            },
+            "dataView": {
+                "show": true,
+                "title": "\u6570\u636e\u89c6\u56fe",
+                "readOnly": false,
+                "lang": [
+                    "\u6570\u636e\u89c6\u56fe",
+                    "\u5173\u95ed",
+                    "\u5237\u65b0"
+                ],
+                "backgroundColor": "#fff",
+                "textareaColor": "#fff",
+                "textareaBorderColor": "#333",
+                "textColor": "#000",
+                "buttonColor": "#c23531",
+                "buttonTextColor": "#fff"
+            },
+            "dataZoom": {
+                "show": true,
+                "title": {
+                    "zoom": "\u533a\u57df\u7f29\u653e",
+                    "back": "\u533a\u57df\u7f29\u653e\u8fd8\u539f"
+                },
+                "icon": {},
+                "xAxisIndex": false,
+                "yAxisIndex": false,
+                "filterMode": "filter"
+            },
+            "magicType": {
+                "show": true,
+                "type": [
+                    "line",
+                    "bar",
+                    "stack",
+                    "tiled"
+                ],
+                "title": {
+                    "line": "\u5207\u6362\u4e3a\u6298\u7ebf\u56fe",
+                    "bar": "\u5207\u6362\u4e3a\u67f1\u72b6\u56fe",
+                    "stack": "\u5207\u6362\u4e3a\u5806\u53e0",
+                    "tiled": "\u5207\u6362\u4e3a\u5e73\u94fa"
+                },
+                "icon": {}
+            },
+            "brush": {
+                "icon": {},
+                "title": {
+                    "rect": "\u77e9\u5f62\u9009\u62e9",
+                    "polygon": "\u5708\u9009",
+                    "lineX": "\u6a2a\u5411\u9009\u62e9",
+                    "lineY": "\u7eb5\u5411\u9009\u62e9",
+                    "keep": "\u4fdd\u6301\u9009\u62e9",
+                    "clear": "\u6e05\u9664\u9009\u62e9"
+                }
+            }
+        }
+    }
+};
+        chart_bar_cmt2.setOption(option_bar_cmt2);
+    </script>
+<br/>                <div id="line1" class="chart-container" style="position: absolute; width: 450px; height: 350px; top: 459.3333435058594px; left: 24px;"></div>
+    <script>
+        var chart_line1 = echarts.init(
+            document.getElementById('line1'), 'white', {renderer: 'canvas'});
+        var option_line1 = {
+    "backgroundColor": "rgba(6,48,109,.2)",
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "line",
+            "name": "top",
+            "connectNulls": false,
+            "yAxisIndex": 0,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": true,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    "\u95ea\u73b0",
+                    100766
+                ],
+                [
+                    "\u5f15\u71c3",
+                    30894
+                ],
+                [
+                    "\u60e9\u6212",
+                    3154
+                ],
+                [
+                    "\u5c4f\u969c",
+                    3043
+                ],
+                [
+                    "\u75be\u8dd1",
+                    19949
+                ],
+                [
+                    "\u4f20\u9001",
+                    25398
+                ],
+                [
+                    "\u865a\u5f31",
+                    12214
+                ],
+                [
+                    "\u51c0\u5316",
+                    696
+                ],
+                [
+                    "\u6cbb\u7597",
+                    9846
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8
+            },
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        },
+        {
+            "type": "line",
+            "name": "jungle",
+            "connectNulls": false,
+            "yAxisIndex": 0,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": true,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    "\u95ea\u73b0",
+                    60225
+                ],
+                [
+                    "\u5f15\u71c3",
+                    23486
+                ],
+                [
+                    "\u60e9\u6212",
+                    100248
+                ],
+                [
+                    "\u5c4f\u969c",
+                    324
+                ],
+                [
+                    "\u75be\u8dd1",
+                    18637
+                ],
+                [
+                    "\u4f20\u9001",
+                    933
+                ],
+                [
+                    "\u865a\u5f31",
+                    214
+                ],
+                [
+                    "\u51c0\u5316",
+                    93
+                ],
+                [
+                    "\u6cbb\u7597",
+                    1800
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8
+            },
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        },
+        {
+            "type": "line",
+            "name": "mid",
+            "connectNulls": false,
+            "yAxisIndex": 0,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": true,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    "\u95ea\u73b0",
+                    100211
+                ],
+                [
+                    "\u5f15\u71c3",
+                    34891
+                ],
+                [
+                    "\u60e9\u6212",
+                    3241
+                ],
+                [
+                    "\u5c4f\u969c",
+                    8013
+                ],
+                [
+                    "\u75be\u8dd1",
+                    22013
+                ],
+                [
+                    "\u4f20\u9001",
+                    14681
+                ],
+                [
+                    "\u865a\u5f31",
+                    12041
+                ],
+                [
+                    "\u51c0\u5316",
+                    987
+                ],
+                [
+                    "\u6cbb\u7597",
+                    9882
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8
+            },
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        },
+        {
+            "type": "line",
+            "name": "adc",
+            "connectNulls": false,
+            "yAxisIndex": 0,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": true,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    "\u95ea\u73b0",
+                    101150
+                ],
+                [
+                    "\u5f15\u71c3",
+                    7819
+                ],
+                [
+                    "\u60e9\u6212",
+                    321
+                ],
+                [
+                    "\u5c4f\u969c",
+                    19583
+                ],
+                [
+                    "\u75be\u8dd1",
+                    14001
+                ],
+                [
+                    "\u4f20\u9001",
+                    4513
+                ],
+                [
+                    "\u865a\u5f31",
+                    2378
+                ],
+                [
+                    "\u51c0\u5316",
+                    25401
+                ],
+                [
+                    "\u6cbb\u7597",
+                    30794
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8
+            },
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        },
+        {
+            "type": "line",
+            "name": "support",
+            "connectNulls": false,
+            "yAxisIndex": 0,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": true,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    "\u95ea\u73b0",
+                    78940
+                ],
+                [
+                    "\u5f15\u71c3",
+                    32415
+                ],
+                [
+                    "\u60e9\u6212",
+                    2481
+                ],
+                [
+                    "\u5c4f\u969c",
+                    877
+                ],
+                [
+                    "\u75be\u8dd1",
+                    10493
+                ],
+                [
+                    "\u4f20\u9001",
+                    17897
+                ],
+                [
+                    "\u865a\u5f31",
+                    37854
+                ],
+                [
+                    "\u51c0\u5316",
+                    5597
+                ],
+                [
+                    "\u6cbb\u7597",
+                    19406
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8
+            },
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "top",
+                "jungle",
+                "mid",
+                "adc",
+                "support"
+            ],
+            "selected": {
+                "top": true,
+                "jungle": true,
+                "mid": true,
+                "adc": true,
+                "support": true
+            },
+            "show": true,
+            "top": "40",
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "axis",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "xAxis": [
+        {
+            "type": "category",
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "boundaryGap": false,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "\u95ea\u73b0",
+                "\u5f15\u71c3",
+                "\u60e9\u6212",
+                "\u5c4f\u969c",
+                "\u75be\u8dd1",
+                "\u4f20\u9001",
+                "\u865a\u5f31",
+                "\u51c0\u5316",
+                "\u6cbb\u7597"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "type": "value",
+            "name": "\u6b21\u6570",
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "axisTick": {
+                "show": true,
+                "alignWithLabel": false,
+                "inside": false
+            },
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }
+    ],
+    "title": [
+        {
+            "text": "\u53ec\u5524\u5e08\u6280\u80fd\u643a\u5e26\u6570\u76ee",
+            "left": "left",
+            "top": "top",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ]
+};
+        chart_line1.setOption(option_line1);
+    </script>
+<br/>                <div id="pie1" class="chart-container" style="position: absolute; width: 450px; height: 276px; top: 533px; left: 1168px;"></div>
+    <script>
+        var chart_pie1 = echarts.init(
+            document.getElementById('pie1'), 'white', {renderer: 'canvas'});
+        var option_pie1 = {
+    "backgroundColor": "rgba(6,48,109,.2)",
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "pie",
+            "name": "LOL\u6bd4\u8d5b\u65f6\u957f\u5206\u5e03",
+            "clockwise": true,
+            "data": [
+                {
+                    "name": "0~10",
+                    "value": 1204
+                },
+                {
+                    "name": "10~20",
+                    "value": 2431
+                },
+                {
+                    "name": "20~30",
+                    "value": 20633
+                },
+                {
+                    "name": "30~40",
+                    "value": 21126
+                },
+                {
+                    "name": "40+",
+                    "value": 6096
+                }
+            ],
+            "radius": [
+                "30%",
+                "55%"
+            ],
+            "center": [
+                "50%",
+                "50%"
+            ],
+            "roseType": "radius",
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8,
+                "formatter": "{b}: {c}"
+            },
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "0~10",
+                "10~20",
+                "20~30",
+                "30~40",
+                "40+"
+            ],
+            "selected": {},
+            "show": true,
+            "left": "right",
+            "orient": "vertical",
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "title": [
+        {
+            "text": "LOL\u6bd4\u8d5b\u65f6\u957f",
+            "left": "left",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ]
+};
+        chart_pie1.setOption(option_pie1);
+    </script>
+<br/>                <div id="heatmap1" class="chart-container" style="position: absolute; width: 674px; height: 426px; top: 382.66668701171875px; left: 482px;"></div>
+    <script>
+        var chart_heatmap1 = echarts.init(
+            document.getElementById('heatmap1'), 'white', {renderer: 'canvas'});
+        var option_heatmap1 = {
+    "backgroundColor": "rgba(6,48,109,.2)",
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "heatmap",
+            "data": [
+                [
+                    0,
+                    0,
+                    1.0
+                ],
+                [
+                    0,
+                    1,
+                    -1.0
+                ],
+                [
+                    0,
+                    2,
+                    -0.17
+                ],
+                [
+                    0,
+                    3,
+                    -0.38
+                ],
+                [
+                    0,
+                    4,
+                    -0.54
+                ],
+                [
+                    0,
+                    5,
+                    -0.26
+                ],
+                [
+                    0,
+                    6,
+                    -0.31
+                ],
+                [
+                    0,
+                    7,
+                    -0.12
+                ],
+                [
+                    0,
+                    8,
+                    0.77
+                ],
+                [
+                    0,
+                    9,
+                    0.65
+                ],
+                [
+                    0,
+                    10,
+                    0.37
+                ],
+                [
+                    0,
+                    11,
+                    0.47
+                ],
+                [
+                    0,
+                    12,
+                    0.22
+                ],
+                [
+                    0,
+                    13,
+                    -0.79
+                ],
+                [
+                    0,
+                    14,
+                    -0.66
+                ],
+                [
+                    0,
+                    15,
+                    -0.4
+                ],
+                [
+                    0,
+                    16,
+                    -0.5
+                ],
+                [
+                    0,
+                    17,
+                    -0.23
+                ],
+                [
+                    1,
+                    0,
+                    -1.0
+                ],
+                [
+                    1,
+                    1,
+                    1.0
+                ],
+                [
+                    1,
+                    2,
+                    0.17
+                ],
+                [
+                    1,
+                    3,
+                    0.38
+                ],
+                [
+                    1,
+                    4,
+                    0.54
+                ],
+                [
+                    1,
+                    5,
+                    0.26
+                ],
+                [
+                    1,
+                    6,
+                    0.31
+                ],
+                [
+                    1,
+                    7,
+                    0.12
+                ],
+                [
+                    1,
+                    8,
+                    -0.77
+                ],
+                [
+                    1,
+                    9,
+                    -0.65
+                ],
+                [
+                    1,
+                    10,
+                    -0.37
+                ],
+                [
+                    1,
+                    11,
+                    -0.47
+                ],
+                [
+                    1,
+                    12,
+                    -0.22
+                ],
+                [
+                    1,
+                    13,
+                    0.79
+                ],
+                [
+                    1,
+                    14,
+                    0.66
+                ],
+                [
+                    1,
+                    15,
+                    0.4
+                ],
+                [
+                    1,
+                    16,
+                    0.5
+                ],
+                [
+                    1,
+                    17,
+                    0.23
+                ],
+                [
+                    2,
+                    0,
+                    -0.17
+                ],
+                [
+                    2,
+                    1,
+                    0.17
+                ],
+                [
+                    2,
+                    2,
+                    1.0
+                ],
+                [
+                    2,
+                    3,
+                    0.26
+                ],
+                [
+                    2,
+                    4,
+                    0.17
+                ],
+                [
+                    2,
+                    5,
+                    0.08
+                ],
+                [
+                    2,
+                    6,
+                    0.19
+                ],
+                [
+                    2,
+                    7,
+                    0.08
+                ],
+                [
+                    2,
+                    8,
+                    -0.13
+                ],
+                [
+                    2,
+                    9,
+                    -0.1
+                ],
+                [
+                    2,
+                    10,
+                    -0.03
+                ],
+                [
+                    2,
+                    11,
+                    -0.08
+                ],
+                [
+                    2,
+                    12,
+                    -0.08
+                ],
+                [
+                    2,
+                    13,
+                    0.22
+                ],
+                [
+                    2,
+                    14,
+                    0.15
+                ],
+                [
+                    2,
+                    15,
+                    0.08
+                ],
+                [
+                    2,
+                    16,
+                    0.16
+                ],
+                [
+                    2,
+                    17,
+                    0.12
+                ],
+                [
+                    3,
+                    0,
+                    -0.38
+                ],
+                [
+                    3,
+                    1,
+                    0.38
+                ],
+                [
+                    3,
+                    2,
+                    0.26
+                ],
+                [
+                    3,
+                    3,
+                    1.0
+                ],
+                [
+                    3,
+                    4,
+                    0.38
+                ],
+                [
+                    3,
+                    5,
+                    0.17
+                ],
+                [
+                    3,
+                    6,
+                    0.4
+                ],
+                [
+                    3,
+                    7,
+                    0.19
+                ],
+                [
+                    3,
+                    8,
+                    -0.32
+                ],
+                [
+                    3,
+                    9,
+                    -0.24
+                ],
+                [
+                    3,
+                    10,
+                    -0.06
+                ],
+                [
+                    3,
+                    11,
+                    -0.2
+                ],
+                [
+                    3,
+                    12,
+                    -0.19
+                ],
+                [
+                    3,
+                    13,
+                    0.51
+                ],
+                [
+                    3,
+                    14,
+                    0.35
+                ],
+                [
+                    3,
+                    15,
+                    0.16
+                ],
+                [
+                    3,
+                    16,
+                    0.36
+                ],
+                [
+                    3,
+                    17,
+                    0.27
+                ],
+                [
+                    4,
+                    0,
+                    -0.54
+                ],
+                [
+                    4,
+                    1,
+                    0.54
+                ],
+                [
+                    4,
+                    2,
+                    0.17
+                ],
+                [
+                    4,
+                    3,
+                    0.38
+                ],
+                [
+                    4,
+                    4,
+                    1.0
+                ],
+                [
+                    4,
+                    5,
+                    0.42
+                ],
+                [
+                    4,
+                    6,
+                    0.35
+                ],
+                [
+                    4,
+                    7,
+                    0.17
+                ],
+                [
+                    4,
+                    8,
+                    -0.28
+                ],
+                [
+                    4,
+                    9,
+                    -0.27
+                ],
+                [
+                    4,
+                    10,
+                    -0.08
+                ],
+                [
+                    4,
+                    11,
+                    -0.16
+                ],
+                [
+                    4,
+                    12,
+                    -0.1
+                ],
+                [
+                    4,
+                    13,
+                    0.76
+                ],
+                [
+                    4,
+                    14,
+                    0.7
+                ],
+                [
+                    4,
+                    15,
+                    0.4
+                ],
+                [
+                    4,
+                    16,
+                    0.49
+                ],
+                [
+                    4,
+                    17,
+                    0.21
+                ],
+                [
+                    5,
+                    0,
+                    -0.26
+                ],
+                [
+                    5,
+                    1,
+                    0.26
+                ],
+                [
+                    5,
+                    2,
+                    0.08
+                ],
+                [
+                    5,
+                    3,
+                    0.17
+                ],
+                [
+                    5,
+                    4,
+                    0.42
+                ],
+                [
+                    5,
+                    5,
+                    1.0
+                ],
+                [
+                    5,
+                    6,
+                    0.2
+                ],
+                [
+                    5,
+                    7,
+                    0.12
+                ],
+                [
+                    5,
+                    8,
+                    -0.0
+                ],
+                [
+                    5,
+                    9,
+                    -0.03
+                ],
+                [
+                    5,
+                    10,
+                    0.13
+                ],
+                [
+                    5,
+                    11,
+                    0.08
+                ],
+                [
+                    5,
+                    12,
+                    -0.01
+                ],
+                [
+                    5,
+                    13,
+                    0.46
+                ],
+                [
+                    5,
+                    14,
+                    0.39
+                ],
+                [
+                    5,
+                    15,
+                    0.79
+                ],
+                [
+                    5,
+                    16,
+                    0.39
+                ],
+                [
+                    5,
+                    17,
+                    0.12
+                ],
+                [
+                    6,
+                    0,
+                    -0.31
+                ],
+                [
+                    6,
+                    1,
+                    0.31
+                ],
+                [
+                    6,
+                    2,
+                    0.19
+                ],
+                [
+                    6,
+                    3,
+                    0.4
+                ],
+                [
+                    6,
+                    4,
+                    0.35
+                ],
+                [
+                    6,
+                    5,
+                    0.2
+                ],
+                [
+                    6,
+                    6,
+                    1.0
+                ],
+                [
+                    6,
+                    7,
+                    0.16
+                ],
+                [
+                    6,
+                    8,
+                    -0.19
+                ],
+                [
+                    6,
+                    9,
+                    -0.16
+                ],
+                [
+                    6,
+                    10,
+                    -0.05
+                ],
+                [
+                    6,
+                    11,
+                    -0.39
+                ],
+                [
+                    6,
+                    12,
+                    -0.1
+                ],
+                [
+                    6,
+                    13,
+                    0.43
+                ],
+                [
+                    6,
+                    14,
+                    0.3
+                ],
+                [
+                    6,
+                    15,
+                    0.2
+                ],
+                [
+                    6,
+                    16,
+                    0.63
+                ],
+                [
+                    6,
+                    17,
+                    0.21
+                ],
+                [
+                    7,
+                    0,
+                    -0.12
+                ],
+                [
+                    7,
+                    1,
+                    0.12
+                ],
+                [
+                    7,
+                    2,
+                    0.08
+                ],
+                [
+                    7,
+                    3,
+                    0.19
+                ],
+                [
+                    7,
+                    4,
+                    0.17
+                ],
+                [
+                    7,
+                    5,
+                    0.12
+                ],
+                [
+                    7,
+                    6,
+                    0.16
+                ],
+                [
+                    7,
+                    7,
+                    1.0
+                ],
+                [
+                    7,
+                    8,
+                    -0.08
+                ],
+                [
+                    7,
+                    9,
+                    -0.06
+                ],
+                [
+                    7,
+                    10,
+                    0.01
+                ],
+                [
+                    7,
+                    11,
+                    -0.06
+                ],
+                [
+                    7,
+                    12,
+                    0.19
+                ],
+                [
+                    7,
+                    13,
+                    0.19
+                ],
+                [
+                    7,
+                    14,
+                    0.14
+                ],
+                [
+                    7,
+                    15,
+                    0.1
+                ],
+                [
+                    7,
+                    16,
+                    0.15
+                ],
+                [
+                    7,
+                    17,
+                    0.87
+                ],
+                [
+                    8,
+                    0,
+                    0.77
+                ],
+                [
+                    8,
+                    1,
+                    -0.77
+                ],
+                [
+                    8,
+                    2,
+                    -0.13
+                ],
+                [
+                    8,
+                    3,
+                    -0.32
+                ],
+                [
+                    8,
+                    4,
+                    -0.28
+                ],
+                [
+                    8,
+                    5,
+                    -0.0
+                ],
+                [
+                    8,
+                    6,
+                    -0.19
+                ],
+                [
+                    8,
+                    7,
+                    -0.08
+                ],
+                [
+                    8,
+                    8,
+                    1.0
+                ],
+                [
+                    8,
+                    9,
+                    0.82
+                ],
+                [
+                    8,
+                    10,
+                    0.49
+                ],
+                [
+                    8,
+                    11,
+                    0.63
+                ],
+                [
+                    8,
+                    12,
+                    0.28
+                ],
+                [
+                    8,
+                    13,
+                    -0.55
+                ],
+                [
+                    8,
+                    14,
+                    -0.47
+                ],
+                [
+                    8,
+                    15,
+                    -0.16
+                ],
+                [
+                    8,
+                    16,
+                    -0.31
+                ],
+                [
+                    8,
+                    17,
+                    -0.22
+                ],
+                [
+                    9,
+                    0,
+                    0.65
+                ],
+                [
+                    9,
+                    1,
+                    -0.65
+                ],
+                [
+                    9,
+                    2,
+                    -0.1
+                ],
+                [
+                    9,
+                    3,
+                    -0.24
+                ],
+                [
+                    9,
+                    4,
+                    -0.27
+                ],
+                [
+                    9,
+                    5,
+                    -0.03
+                ],
+                [
+                    9,
+                    6,
+                    -0.16
+                ],
+                [
+                    9,
+                    7,
+                    -0.06
+                ],
+                [
+                    9,
+                    8,
+                    0.82
+                ],
+                [
+                    9,
+                    9,
+                    1.0
+                ],
+                [
+                    9,
+                    10,
+                    0.48
+                ],
+                [
+                    9,
+                    11,
+                    0.54
+                ],
+                [
+                    9,
+                    12,
+                    0.21
+                ],
+                [
+                    9,
+                    13,
+                    -0.47
+                ],
+                [
+                    9,
+                    14,
+                    -0.41
+                ],
+                [
+                    9,
+                    15,
+                    -0.15
+                ],
+                [
+                    9,
+                    16,
+                    -0.28
+                ],
+                [
+                    9,
+                    17,
+                    -0.16
+                ],
+                [
+                    10,
+                    0,
+                    0.37
+                ],
+                [
+                    10,
+                    1,
+                    -0.37
+                ],
+                [
+                    10,
+                    2,
+                    -0.03
+                ],
+                [
+                    10,
+                    3,
+                    -0.06
+                ],
+                [
+                    10,
+                    4,
+                    -0.08
+                ],
+                [
+                    10,
+                    5,
+                    0.13
+                ],
+                [
+                    10,
+                    6,
+                    -0.05
+                ],
+                [
+                    10,
+                    7,
+                    0.01
+                ],
+                [
+                    10,
+                    8,
+                    0.49
+                ],
+                [
+                    10,
+                    9,
+                    0.48
+                ],
+                [
+                    10,
+                    10,
+                    1.0
+                ],
+                [
+                    10,
+                    11,
+                    0.41
+                ],
+                [
+                    10,
+                    12,
+                    0.12
+                ],
+                [
+                    10,
+                    13,
+                    -0.14
+                ],
+                [
+                    10,
+                    14,
+                    -0.15
+                ],
+                [
+                    10,
+                    15,
+                    -0.19
+                ],
+                [
+                    10,
+                    16,
+                    -0.03
+                ],
+                [
+                    10,
+                    17,
+                    -0.05
+                ],
+                [
+                    11,
+                    0,
+                    0.47
+                ],
+                [
+                    11,
+                    1,
+                    -0.47
+                ],
+                [
+                    11,
+                    2,
+                    -0.08
+                ],
+                [
+                    11,
+                    3,
+                    -0.2
+                ],
+                [
+                    11,
+                    4,
+                    -0.16
+                ],
+                [
+                    11,
+                    5,
+                    0.08
+                ],
+                [
+                    11,
+                    6,
+                    -0.39
+                ],
+                [
+                    11,
+                    7,
+                    -0.06
+                ],
+                [
+                    11,
+                    8,
+                    0.63
+                ],
+                [
+                    11,
+                    9,
+                    0.54
+                ],
+                [
+                    11,
+                    10,
+                    0.41
+                ],
+                [
+                    11,
+                    11,
+                    1.0
+                ],
+                [
+                    11,
+                    12,
+                    0.2
+                ],
+                [
+                    11,
+                    13,
+                    -0.3
+                ],
+                [
+                    11,
+                    14,
+                    -0.27
+                ],
+                [
+                    11,
+                    15,
+                    -0.03
+                ],
+                [
+                    11,
+                    16,
+                    -0.49
+                ],
+                [
+                    11,
+                    17,
+                    -0.16
+                ],
+                [
+                    12,
+                    0,
+                    0.22
+                ],
+                [
+                    12,
+                    1,
+                    -0.22
+                ],
+                [
+                    12,
+                    2,
+                    -0.08
+                ],
+                [
+                    12,
+                    3,
+                    -0.19
+                ],
+                [
+                    12,
+                    4,
+                    -0.1
+                ],
+                [
+                    12,
+                    5,
+                    -0.01
+                ],
+                [
+                    12,
+                    6,
+                    -0.1
+                ],
+                [
+                    12,
+                    7,
+                    0.19
+                ],
+                [
+                    12,
+                    8,
+                    0.28
+                ],
+                [
+                    12,
+                    9,
+                    0.21
+                ],
+                [
+                    12,
+                    10,
+                    0.12
+                ],
+                [
+                    12,
+                    11,
+                    0.2
+                ],
+                [
+                    12,
+                    12,
+                    1.0
+                ],
+                [
+                    12,
+                    13,
+                    -0.21
+                ],
+                [
+                    12,
+                    14,
+                    -0.16
+                ],
+                [
+                    12,
+                    15,
+                    -0.05
+                ],
+                [
+                    12,
+                    16,
+                    -0.15
+                ],
+                [
+                    12,
+                    17,
+                    -0.33
+                ],
+                [
+                    13,
+                    0,
+                    -0.79
+                ],
+                [
+                    13,
+                    1,
+                    0.79
+                ],
+                [
+                    13,
+                    2,
+                    0.22
+                ],
+                [
+                    13,
+                    3,
+                    0.51
+                ],
+                [
+                    13,
+                    4,
+                    0.76
+                ],
+                [
+                    13,
+                    5,
+                    0.46
+                ],
+                [
+                    13,
+                    6,
+                    0.43
+                ],
+                [
+                    13,
+                    7,
+                    0.19
+                ],
+                [
+                    13,
+                    8,
+                    -0.55
+                ],
+                [
+                    13,
+                    9,
+                    -0.47
+                ],
+                [
+                    13,
+                    10,
+                    -0.14
+                ],
+                [
+                    13,
+                    11,
+                    -0.3
+                ],
+                [
+                    13,
+                    12,
+                    -0.21
+                ],
+                [
+                    13,
+                    13,
+                    1.0
+                ],
+                [
+                    13,
+                    14,
+                    0.83
+                ],
+                [
+                    13,
+                    15,
+                    0.52
+                ],
+                [
+                    13,
+                    16,
+                    0.65
+                ],
+                [
+                    13,
+                    17,
+                    0.29
+                ],
+                [
+                    14,
+                    0,
+                    -0.66
+                ],
+                [
+                    14,
+                    1,
+                    0.66
+                ],
+                [
+                    14,
+                    2,
+                    0.15
+                ],
+                [
+                    14,
+                    3,
+                    0.35
+                ],
+                [
+                    14,
+                    4,
+                    0.7
+                ],
+                [
+                    14,
+                    5,
+                    0.39
+                ],
+                [
+                    14,
+                    6,
+                    0.3
+                ],
+                [
+                    14,
+                    7,
+                    0.14
+                ],
+                [
+                    14,
+                    8,
+                    -0.47
+                ],
+                [
+                    14,
+                    9,
+                    -0.41
+                ],
+                [
+                    14,
+                    10,
+                    -0.15
+                ],
+                [
+                    14,
+                    11,
+                    -0.27
+                ],
+                [
+                    14,
+                    12,
+                    -0.16
+                ],
+                [
+                    14,
+                    13,
+                    0.83
+                ],
+                [
+                    14,
+                    14,
+                    1.0
+                ],
+                [
+                    14,
+                    15,
+                    0.5
+                ],
+                [
+                    14,
+                    16,
+                    0.55
+                ],
+                [
+                    14,
+                    17,
+                    0.22
+                ],
+                [
+                    15,
+                    0,
+                    -0.4
+                ],
+                [
+                    15,
+                    1,
+                    0.4
+                ],
+                [
+                    15,
+                    2,
+                    0.08
+                ],
+                [
+                    15,
+                    3,
+                    0.16
+                ],
+                [
+                    15,
+                    4,
+                    0.4
+                ],
+                [
+                    15,
+                    5,
+                    0.79
+                ],
+                [
+                    15,
+                    6,
+                    0.2
+                ],
+                [
+                    15,
+                    7,
+                    0.1
+                ],
+                [
+                    15,
+                    8,
+                    -0.16
+                ],
+                [
+                    15,
+                    9,
+                    -0.15
+                ],
+                [
+                    15,
+                    10,
+                    -0.19
+                ],
+                [
+                    15,
+                    11,
+                    -0.03
+                ],
+                [
+                    15,
+                    12,
+                    -0.05
+                ],
+                [
+                    15,
+                    13,
+                    0.52
+                ],
+                [
+                    15,
+                    14,
+                    0.5
+                ],
+                [
+                    15,
+                    15,
+                    1.0
+                ],
+                [
+                    15,
+                    16,
+                    0.44
+                ],
+                [
+                    15,
+                    17,
+                    0.12
+                ],
+                [
+                    16,
+                    0,
+                    -0.5
+                ],
+                [
+                    16,
+                    1,
+                    0.5
+                ],
+                [
+                    16,
+                    2,
+                    0.16
+                ],
+                [
+                    16,
+                    3,
+                    0.36
+                ],
+                [
+                    16,
+                    4,
+                    0.49
+                ],
+                [
+                    16,
+                    5,
+                    0.39
+                ],
+                [
+                    16,
+                    6,
+                    0.63
+                ],
+                [
+                    16,
+                    7,
+                    0.15
+                ],
+                [
+                    16,
+                    8,
+                    -0.31
+                ],
+                [
+                    16,
+                    9,
+                    -0.28
+                ],
+                [
+                    16,
+                    10,
+                    -0.03
+                ],
+                [
+                    16,
+                    11,
+                    -0.49
+                ],
+                [
+                    16,
+                    12,
+                    -0.15
+                ],
+                [
+                    16,
+                    13,
+                    0.65
+                ],
+                [
+                    16,
+                    14,
+                    0.55
+                ],
+                [
+                    16,
+                    15,
+                    0.44
+                ],
+                [
+                    16,
+                    16,
+                    1.0
+                ],
+                [
+                    16,
+                    17,
+                    0.22
+                ],
+                [
+                    17,
+                    0,
+                    -0.23
+                ],
+                [
+                    17,
+                    1,
+                    0.23
+                ],
+                [
+                    17,
+                    2,
+                    0.12
+                ],
+                [
+                    17,
+                    3,
+                    0.27
+                ],
+                [
+                    17,
+                    4,
+                    0.21
+                ],
+                [
+                    17,
+                    5,
+                    0.12
+                ],
+                [
+                    17,
+                    6,
+                    0.21
+                ],
+                [
+                    17,
+                    7,
+                    0.87
+                ],
+                [
+                    17,
+                    8,
+                    -0.22
+                ],
+                [
+                    17,
+                    9,
+                    -0.16
+                ],
+                [
+                    17,
+                    10,
+                    -0.05
+                ],
+                [
+                    17,
+                    11,
+                    -0.16
+                ],
+                [
+                    17,
+                    12,
+                    -0.33
+                ],
+                [
+                    17,
+                    13,
+                    0.29
+                ],
+                [
+                    17,
+                    14,
+                    0.22
+                ],
+                [
+                    17,
+                    15,
+                    0.12
+                ],
+                [
+                    17,
+                    16,
+                    0.22
+                ],
+                [
+                    17,
+                    17,
+                    1.0
+                ]
+            ],
+            "label": {
+                "show": true,
+                "position": "inside",
+                "margin": 8
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                ""
+            ],
+            "selected": {
+                "": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "xAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "axisLabel": {
+                "show": true,
+                "position": "top",
+                "rotate": 30,
+                "margin": 8
+            },
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "\u84dd\u8d62",
+                "\u7ea2\u8d62",
+                "\u4e00\u8840",
+                "\u4e00\u5854",
+                "\u4e00\u5148\u950b",
+                "\u4e00\u5927\u9f99",
+                "\u4e00\u5c0f\u9f99",
+                "\u4e00\u6cb3\u87f9",
+                "\u84dd\u961f\u63a8\u5854\u6570",
+                "\u84dd\u961f\u63a8\u6c34\u6676\u6570",
+                "\u84dd\u961f\u5927\u9f99\u6570",
+                "\u84dd\u961f\u5c0f\u9f99\u6570",
+                "\u84dd\u961f\u5148\u950b\u6570",
+                "\u7ea2\u961f\u63a8\u5854\u6570",
+                "\u7ea2\u961f\u63a8\u6c34\u6676\u6570",
+                "\u7ea2\u961f\u5927\u9f99\u6570",
+                "\u7ea2\u961f\u5c0f\u9f99\u6570",
+                "\u7ea2\u961f\u5148\u950b\u6570"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "\u84dd\u8d62",
+                "\u7ea2\u8d62",
+                "\u4e00\u8840",
+                "\u4e00\u5854",
+                "\u4e00\u5148\u950b",
+                "\u4e00\u5927\u9f99",
+                "\u4e00\u5c0f\u9f99",
+                "\u4e00\u6cb3\u87f9",
+                "\u84dd\u961f\u63a8\u5854\u6570",
+                "\u84dd\u961f\u63a8\u6c34\u6676\u6570",
+                "\u84dd\u961f\u5927\u9f99\u6570",
+                "\u84dd\u961f\u5c0f\u9f99\u6570",
+                "\u84dd\u961f\u5148\u950b\u6570",
+                "\u7ea2\u961f\u63a8\u5854\u6570",
+                "\u7ea2\u961f\u63a8\u6c34\u6676\u6570",
+                "\u7ea2\u961f\u5927\u9f99\u6570",
+                "\u7ea2\u961f\u5c0f\u9f99\u6570",
+                "\u7ea2\u961f\u5148\u950b\u6570"
+            ]
+        }
+    ],
+    "title": [
+        {
+            "text": "\u6570\u636e\u4e4b\u95f4\u76f8\u5173\u6027",
+            "left": "center",
+            "top": "top",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ],
+    "visualMap": {
+        "show": true,
+        "type": "continuous",
+        "min": -1,
+        "max": 1,
+        "inRange": {
+            "color": [
+                "#50a3ba",
+                "#eac763",
+                "#d94e5d"
+            ]
+        },
+        "calculable": true,
+        "inverse": false,
+        "splitNumber": 5,
+        "orient": "vertical",
+        "right": "right",
+        "showLabel": true,
+        "itemWidth": 20,
+        "itemHeight": 140,
+        "borderWidth": 0
+    }
+};
+        chart_heatmap1.setOption(option_heatmap1);
+    </script>
+<br/>                <div id="table1" class="chart-container" style="position: absolute; width: 448px; height: 231px; top: 287.3333435058594px; left: 1170px;"></div>
+    <script>
+        var chart_table1 = echarts.init(
+            document.getElementById('table1'), 'white', {renderer: 'canvas'});
+        var option_table1 = {
+    "backgroundColor": "rgba(6,48,109,.2)",
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "heatmap",
+            "data": [
+                [
+                    0,
+                    0,
+                    293460
+                ],
+                [
+                    0,
+                    1,
+                    52393
+                ],
+                [
+                    0,
+                    2,
+                    19169
+                ],
+                [
+                    0,
+                    3,
+                    71426
+                ],
+                [
+                    0,
+                    4,
+                    12948
+                ],
+                [
+                    1,
+                    0,
+                    285742
+                ],
+                [
+                    1,
+                    1,
+                    50722
+                ],
+                [
+                    1,
+                    2,
+                    21345
+                ],
+                [
+                    1,
+                    3,
+                    72311
+                ],
+                [
+                    1,
+                    4,
+                    12363
+                ]
+            ],
+            "label": {
+                "show": true,
+                "position": "inside",
+                "color": "orange",
+                "margin": 8
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                ""
+            ],
+            "selected": {
+                "": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "xAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "axisLabel": {
+                "show": true,
+                "position": "top",
+                "rotate": 0,
+                "margin": 8
+            },
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "Blue",
+                "Red"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "\u63a8\u5854\u6570",
+                "\u63a8\u6c34\u6676\u6570",
+                "\u5927\u9f99\u6570",
+                "\u5c0f\u9f99\u6570",
+                "\u5148\u950b\u6570"
+            ]
+        }
+    ],
+    "title": [
+        {
+            "text": "\u5404\u961f\u8d44\u6e90\u6570\u91cf",
+            "left": "center",
+            "top": "top",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ],
+    "visualMap": {
+        "show": false,
+        "type": "continuous",
+        "min": 0,
+        "max": 100,
+        "inRange": {
+            "color": [
+                "rgba(6,48,109,.2)"
+            ]
+        },
+        "calculable": true,
+        "inverse": false,
+        "splitNumber": 5,
+        "orient": "vertical",
+        "showLabel": true,
+        "itemWidth": 20,
+        "itemHeight": 140,
+        "borderWidth": 0
+    }
+};
+        chart_table1.setOption(option_table1);
+    </script>
+<br/>                <div id="re_bar" class="chart-container" style="position: absolute; width: 442px; height: 373px; top: 59px; left: 25px;"></div>
+    <script>
+        var chart_re_bar = echarts.init(
+            document.getElementById('re_bar'), 'white', {renderer: 'canvas'});
+        var option_re_bar = {
+    "backgroundColor": "rgba(6,48,109,.2)",
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "bar",
+            "name": "\u767b\u573a\u6b21\u6570",
+            "legendHoverLink": true,
+            "data": [
+                8300,
+                7872,
+                8691,
+                8838,
+                9188,
+                9853,
+                10658,
+                13002,
+                12983,
+                13002
+            ],
+            "showBackground": false,
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "position": "right",
+                "margin": 8
+            },
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u767b\u573a\u6b21\u6570"
+            ],
+            "selected": {
+                "\u767b\u573a\u6b21\u6570": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "xAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }
+    ],
+    "yAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "\u5929\u4f7f",
+                "\u8bfa",
+                "\u8239\u957f",
+                "\u4e9a\u7d22",
+                "\u745e\u5179",
+                "\u6cf0\u5766",
+                "\u971e",
+                "\u9152\u6876",
+                "\u76f2\u50e7",
+                "\u5361\u838e"
+            ]
+        }
+    ],
+    "title": [
+        {
+            "text": "\u82f1\u96c4\u767b\u573a\u6b21\u6570",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ]
+};
+        chart_re_bar.setOption(option_re_bar);
+    </script>
+<br/>                <div id="bar1" class="chart-container" style="position: absolute; width: 673px; height: 249px; top: 101.66667175292969px; left: 482px;"></div>
+    <script>
+        var chart_bar1 = echarts.init(
+            document.getElementById('bar1'), 'white', {renderer: 'canvas'});
+        var option_bar1 = {
+    "backgroundColor": "rgba(6,48,109,.2)",
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "bar",
+            "name": "train",
+            "legendHoverLink": true,
+            "data": [
+                98.04,
+                97.58,
+                97.88,
+                97.12,
+                96.49
+            ],
+            "showBackground": false,
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            }
+        },
+        {
+            "type": "bar",
+            "name": "test",
+            "legendHoverLink": true,
+            "data": [
+                96.18,
+                95.34,
+                96.45,
+                96.9,
+                97.54
+            ],
+            "showBackground": false,
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            }
+        },
+        {
+            "type": "line",
+            "name": "train",
+            "connectNulls": false,
+            "yAxisIndex": 0,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": true,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    "SVM",
+                    98.04
+                ],
+                [
+                    "DecisionTree",
+                    97.58
+                ],
+                [
+                    "RandomForest",
+                    97.88
+                ],
+                [
+                    "MLP",
+                    97.12
+                ],
+                [
+                    "Transformer",
+                    96.49
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8
+            },
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        },
+        {
+            "type": "line",
+            "name": "test",
+            "connectNulls": false,
+            "yAxisIndex": 0,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": true,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    "SVM",
+                    96.18
+                ],
+                [
+                    "DecisionTree",
+                    95.34
+                ],
+                [
+                    "RandomForest",
+                    96.45
+                ],
+                [
+                    "MLP",
+                    96.9
+                ],
+                [
+                    "Transformer",
+                    97.54
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8
+            },
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "train",
+                "test",
+                "train",
+                "test"
+            ],
+            "selected": {
+                "train": true,
+                "test": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "xAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "axisLabel": {
+                "show": true,
+                "position": "top",
+                "rotate": 30,
+                "margin": 8
+            },
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "SVM",
+                "DecisionTree",
+                "RandomForest",
+                "MLP",
+                "Transformer"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }
+    ],
+    "title": [
+        {
+            "text": "\u6a21\u578b\u9884\u6d4b\u6bd4\u8d5b\u80dc\u7387",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ],
+    "toolbox": {
+        "toolbox": [
+            "rect",
+            "polygon",
+            "keep",
+            "clear"
+        ],
+        "brushType": "rect",
+        "brushMode": "single",
+        "transformable": true,
+        "brushStyle": {
+            "borderWidth": 1,
+            "color": "rgba(120,140,180,0.3)",
+            "borderColor": "rgba(120,140,180,0.8)"
+        },
+        "throttleType": "fixRate",
+        "throttleDelay": 0,
+        "removeOnClick": true
+    }
+};
+        chart_bar1.setOption(option_bar1);
+    </script>
+<br/>    </div>
+    <script>
+            $('#bar_cmt2').css('border-style', 'dashed').css('border-width', '0px');$("#bar_cmt2>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#bar_cmt2'), function() { chart_bar_cmt2.resize()});
+            $('#line1').css('border-style', 'dashed').css('border-width', '0px');$("#line1>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#line1'), function() { chart_line1.resize()});
+            $('#pie1').css('border-style', 'dashed').css('border-width', '0px');$("#pie1>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#pie1'), function() { chart_pie1.resize()});
+            $('#heatmap1').css('border-style', 'dashed').css('border-width', '0px');$("#heatmap1>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#heatmap1'), function() { chart_heatmap1.resize()});
+            $('#table1').css('border-style', 'dashed').css('border-width', '0px');$("#table1>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#table1'), function() { chart_table1.resize()});
+            $('#re_bar').css('border-style', 'dashed').css('border-width', '0px');$("#re_bar>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#re_bar'), function() { chart_re_bar.resize()});
+            $('#bar1').css('border-style', 'dashed').css('border-width', '0px');$("#bar1>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#bar1'), function() { chart_bar1.resize()});
+            var charts_id = ['bar_cmt2','line1','pie1','heatmap1','table1','re_bar','bar1'];
+function downloadCfg () {
+    const fileName = 'chart_config.json'
+    let downLink = document.createElement('a')
+    downLink.download = fileName
+
+    let result = []
+    for(let i=0; i<charts_id.length; i++) {
+        chart = $('#'+charts_id[i])
+        result.push({
+            cid: charts_id[i],
+            width: chart.css("width"),
+            height: chart.css("height"),
+            top: chart.offset().top + "px",
+            left: chart.offset().left + "px"
+        })
+    }
+
+    let blob = new Blob([JSON.stringify(result)])
+    downLink.href = URL.createObjectURL(blob)
+    document.body.appendChild(downLink)
+    downLink.click()
+    document.body.removeChild(downLink)
+}
+    </script>
+</body>
+</html>
